@@ -27,12 +27,16 @@ class HomeScreenState extends State<HomeScreen>{
   }
 
   void _handleSubmitted() {
-    final FormState form = formKey.currentState;
+//    final FormState form = formKey.currentState;
     Navigator.pushNamed(context, "/BrowseCommunities");
   }
 
   void _browseCommunities() {
     Navigator.pushNamed(context, "/BrowseCommunities");
+  }
+
+  void _AboutPage() {
+    Navigator.pushNamed(context, "/AboutPage");
   }
 
   @override
@@ -53,7 +57,7 @@ class HomeScreenState extends State<HomeScreen>{
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     new GestureDetector(
-//                      onTap: _handleSubmitted,
+                      onTap: _handleSubmitted,
                       child: new Image(
                         image: logo,
                         width: (screenSize.width < 500)
@@ -73,6 +77,32 @@ class HomeScreenState extends State<HomeScreen>{
                   ]
                 ),
               ),
+            Container(
+              child: new Row(
+                children: <Widget>[
+                  RoundedButton(
+                    buttonName: "About",
+                    onTap: _AboutPage,
+                    width: screenSize.width / 4,
+                    height: 50.0,
+                    bottomMargin: 10.0,
+                    borderWidth: 0.0,
+                    buttonColor: Colors.grey,
+                    textColor: Colors.yellow,
+                  ),
+                  RoundedButton(
+                    buttonName: "Contact",
+                    onTap: _browseCommunities,
+                    width: screenSize.width / 4,
+                    height: 50.0,
+                    bottomMargin: 10.0,
+                    borderWidth: 0.0,
+                    buttonColor: Colors.grey,
+                    textColor: Colors.yellow,
+                  ),
+                ],
+              ),
+            ),
             Container (
               child: GestureDetector(
                 onTap: _browseCommunities,

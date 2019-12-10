@@ -45,7 +45,8 @@ class RoundedButton extends StatelessWidget {
                   width: borderWidth)),
           child: new Text(buttonName, style: TextStyle(color: textColor)),
         ),
-      ));
+      )
+    );
     else
       return (new InkWell(
         onTap: onTap,
@@ -60,6 +61,7 @@ class RoundedButton extends StatelessWidget {
           ),
           child: new Text(buttonName, style: TextStyle(color: textColor)),
         ),
-      ));
+      )
+    );
   }
 }
